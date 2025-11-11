@@ -23,15 +23,7 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", userSchema);
 
-User.findById("69137bc7228fe8119031dc34")
-//User.findOne({ age: {$gte: 47}})
-.then((res) =>{
-  console.log(res);
-})
-.catch((err) => {
-  console.log(err);
-  
-});
+
 
 //const Employee = mongoose.model("Employee", userSchema); 
 
@@ -67,3 +59,42 @@ user2
 //   console.log(res);
   
 // });
+
+// User.findById("69137bc7228fe8119031dc34")
+// //User.findOne({ age: {$gte: 47}})
+// .then((res) =>{
+//   console.log(res);
+// })
+// .catch((err) => {
+//   console.log(err);
+  
+// });
+
+// User.updateOne({name: "Peter"}, {age: 49})
+// .then((res) => {
+//   console.log(res);
+// })
+// .catch((err) => {
+//   console.log(err);
+  
+// });
+
+
+// User.findOneAndUpdate({name: "Akash"}, {age: 36}, {new: true})
+// .then((res) => {
+//   console.log(res);
+// })
+// .catch((err) => {
+//   console.log(err);
+  
+// });
+
+// User.deleteOne({name: "Peter"}).then((res) => {
+//   console.log(res);
+  
+// });
+
+User.findByIdAndDelete("69137bc7228fe8119031dc34").then((res) => {
+  console.log(res);
+  
+});
