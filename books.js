@@ -19,13 +19,24 @@ const bookSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true,
+        maxLength: 20,
     },
     author: {
         type: String,
     },
     price: {
         type: Number,
+        min: [1, "please enter a valid price"],
     },
+    discount: {
+        type: Number,
+        default: 0,
+    },
+    genere: [String],
+    category: {
+        type: String,
+        enum: ["friction", "non-friction"],
+    }
 });
 
 const Book = mongoose.model("Book", bookSchema);
@@ -34,6 +45,7 @@ let book1 = new Book({
     title: "Mathematics XII",
     author: "RD Sharma",
     price: 799,
+    genere: "studying"
 });
 
 book1
