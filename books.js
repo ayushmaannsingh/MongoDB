@@ -26,7 +26,7 @@ const bookSchema = new mongoose.Schema({
     },
     price: {
         type: Number,
-        min: [1, "please enter a valid price"],
+        min: [1, "Price is too low for Amazon selling"],
     },
     discount: {
         type: Number,
@@ -41,19 +41,33 @@ const bookSchema = new mongoose.Schema({
 
 const Book = mongoose.model("Book", bookSchema);
 
-let book1 = new Book({
-    title: "Mathematics XII",
-    author: "RD Sharma",
-    price: 799,
-    genere: "studying"
-});
-
-book1
-.save()
+Book.findByIdAndUpdate(
+    "691c69b6d2e3d906934af176", 
+    { price: -100},
+    
+    )
 .then((res) => {
-    console.log(res);    
+    console.log(res);
 })
 .catch((err) => {
-    console.log(err);
-    
+    console.log(err); 
 });
+
+
+
+// let book1 = new Book({
+//     title: "Mathematics XII",
+//     author: "RD Sharma",
+//     price: 799,
+//     genere: "studying"
+// });
+
+// book1
+// .save()
+// .then((res) => {
+//     console.log(res);    
+// })
+// .catch((err) => {
+//     console.log(err);
+    
+// });
