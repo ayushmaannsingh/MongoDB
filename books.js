@@ -27,3 +27,21 @@ const bookSchema = new mongoose.Schema({
         type: Number,
     },
 });
+
+const Book = mongoose.model("Book", bookSchema);
+
+let book1 = new Book({
+    title: "Mathematics XII",
+    author: "RD Sharma",
+    price: 799,
+});
+
+book1
+.save()
+.then((res) => {
+    console.log(res);    
+})
+.catch((err) => {
+    console.log(err);
+    
+});
