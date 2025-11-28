@@ -72,3 +72,21 @@ Book.findByIdAndUpdate(
     
 // });
 
+// --------
+
+// let book1 = new Book({
+//     title: "Mathematics XII",
+//     author: "RD Sharma",
+//     price: 799,
+//     genere: "studying"
+// });
+
+// book1
+// .save()
+// .then((res) => {
+//     console.log(res);    
+// })
+// .catch((err) => {
+//     console.log(err);
+    
+// });
