@@ -17,5 +17,3 @@ TestDB> db.Players.find( {$or: [{score: {$gt: 80}}, {name: "ashu"}] })
 TestDB>
 
 
-
-
